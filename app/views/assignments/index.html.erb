@@ -1,23 +1,41 @@
-<h1>Listing assignments</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HomeworkTracker</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
 
-<table>
-  <thead>
-    <tr>
-      <th>Homework</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @assignments.each do |assignment| %>
-      <tr>
-        <td><%= link_to assignment.title, assignment %></td>
+<body>
+  <div id="account">
+  <p>Homework Tracker</p>
+  <ul id= "navigation">
+  <li>
+    <% if current_user %>
+    <span>Welcome, <%= current_user.name %></span></li>
+  <li>
+    <%= link_to "logout", logout_path, id: "login" %>
+    <% else %>
+    <%= link_to "login", login_path, id: "logout" %>
     <% end %>
-  </tbody>
-</table>
+  </li>
+  <li>
+    <% @assignments.each do |assignment| %>
+      
+       <%= link_to assignment.title, assignment %>
+    <% end %>
+    </li>
+    <li>
+      <%= link_to 'New Assignment', new_assignment_path %>
+    </li>
+  </ul>
+  
 
-<br>
+  <%= yield %>
 
-<%= link_to 'New Assignment', new_assignment_path %>
+</body>
+</html>
+
+
+
