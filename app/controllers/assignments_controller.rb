@@ -62,9 +62,11 @@ class AssignmentsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-
+    def set_assignment
+      @assignment = Assignment.find_or_initialize_by_id(params[:id], user_id: session[:user_id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def assignment_params
       params.require(:assignment).permit(:title, :description, :image_url, :due_date, :user_id)
     end
-end
+  end

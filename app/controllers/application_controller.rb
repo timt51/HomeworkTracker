@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   	@current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  def set_assignment
+  def load_assignment
   	@assignment = Assignment.find_or_initialize_by_id(params[:id], user_id: session[:user_id])
   end
 
