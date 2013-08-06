@@ -3,10 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Image url</th>
-      <th>Due date</th>
+      <th>Homework</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,14 +13,7 @@
   <tbody>
     <% @assignments.each do |assignment| %>
       <tr>
-        <td><%= assignment.title %></td>
-        <td><%= assignment.description %></td>
-        <td><%= assignment.image_url %></td>
-        <td><%= assignment.due_date %></td>
-        <td><%= link_to 'Show', assignment %></td>
-        <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
-        <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= link_to assignment.title, assignment %></td>
     <% end %>
   </tbody>
 </table>
