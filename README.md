@@ -2,7 +2,7 @@ Idea 1: Merchant
 
 Pitch
 
-A webapp that people can use to sell stuff and buy stuff from. Nana loves sneakers <333
+A webapp that people can use to sell stuff and buy stuff from. Nana loves a lot of sneakers <333
 
 Audience
 
