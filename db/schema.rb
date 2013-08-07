@@ -11,17 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130806160458) do
+ActiveRecord::Schema.define(version: 20130807145915) do
 
   create_table "assignments", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
-    t.string   "due_date"
+    t.date     "due_date",    limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.boolean  "complete",    default: false
+    t.boolean  "complete",                default: false
   end
 
   create_table "users", force: true do |t|
