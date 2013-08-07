@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <div id="account">
+<!--   <div id="account">
   <p>Homework Tracker</p>
   <ul id= "navigation">
   <li>
@@ -20,7 +20,35 @@
     <%= link_to "login", login_path, id: "logout" %>
     <% end %>
   </li>
-  
+  </ul> -->
+
+  <div id="tabs">
+  <ul id="tabMenu">
+      <li class="regular">
+      <% if current_user %>
+      <span>Welcome, <%= current_user.name %></span>
+    </li>         
+    <li class="dropdown">
+          <%= link_to "logout", logout_path, id: "login" %>
+    <% else %>
+    <%= link_to "login", login_path, id: "logout" %>
+    <% end %>
+    </li>         
+    <li class="dropdown">
+      <a href="#tab2">Sign-Up</a>
+    </li>         
+    <li class="dropdown">
+      <a href="#tab3">Forgot Password</a>
+    </li>           
+   <li class="regular">
+    <a href="home.html">About</a>
+  </li>         
+  <li class="dropdown">
+    <a href="#tab4">Contact</a>
+  </li>         
+  <li class="edges"> </li>              
+</ul>
+</div>
 	<%= yield %>
 
 </body>
