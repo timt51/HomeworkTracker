@@ -3,7 +3,7 @@ class AssignmentsController < ApplicationController
   # GET /assignments
   # GET /assignments.json
   def index
-    @assignments = Assignment.all.sort_by { |assignment| [assignment.complete ? 0 : 1] }
+    @assignments = Assignment.all.sort_by { |assignment| [assignment.complete ? 1 : 0 ] }
   end
 
   # GET /assignments/1
