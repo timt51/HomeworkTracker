@@ -15,13 +15,13 @@ body {
 	background-color: #fff; 
 }
 
-#navigation {
+#tabs {
 	list-style: none;
 	background-color: #ccf;
 	border-width: 900px;
 }
 
-#navigation li {
+#tabs li {
 	display: inline;
 	margin-right: 40px;
 }
