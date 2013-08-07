@@ -8,20 +8,6 @@
 </head>
 <body>
 
-<!--   <div id="account">
-  <p>Homework Tracker</p>
-  <ul id= "navigation">
-  <li>
-    <% if current_user %>
-    <span>Welcome, <%= current_user.name %></span></li>
-  <li>
-    <%= link_to "logout", logout_path, id: "login" %>
-    <% else %>
-    <%= link_to "login", login_path, id: "logout" %>
-    <% end %>
-  </li>
-  </ul> -->
-
   <div id="tabs">
   <ul id="tabMenu">
       <li class="regular">
@@ -49,6 +35,41 @@
   <li class="edges"> </li>              
 </ul>
 </div>
+
+<div id="tabContainer">
+  <ul id="tabPanes">     
+	  <li id="tab1">
+		  <p> </p>
+			
+<div class="formcontainer">
+
+<div class="text">
+  <label for="username">Username</label>                      
+	<input type="text" alt="The username you chose when signing-up for
+		the site." id="username" name="username">
+</div>                                  
+
+<div class="text">
+  <label for="password">Password</label>                     
+	<input type="text" alt="The password you chose when signing-up for
+		the site." id="password" name="password">
+</div>                                  
+				
+<div class="text">                      
+  <input type="checkbox" id="rememberme" name="rememberme"> Remember Me</div>
+</div>            
+
+<center> 
+  <div id="bluebutton" class="block">
+    <button>Login</button> 
+  </div>             
+</center> 
+
+<p> </p>
+	</li> 
+  </ul>
+</div>
+
 	<%= yield %>
 
 </body>
