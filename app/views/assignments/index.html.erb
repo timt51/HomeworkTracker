@@ -10,7 +10,6 @@
       <th></th>
     </tr>
   </thead>
-
     <% @assignments.each do |assignment| %>
         <% if assignment.complete? %>
         <%= image_tag("complete.png") %>
@@ -25,6 +24,7 @@
   <% end %>
 
 <br>
-
+<li>
 <%= link_to 'New Assignment', new_assignment_path %>
+</li>
 <% end %>
