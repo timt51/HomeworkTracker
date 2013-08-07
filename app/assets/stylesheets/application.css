@@ -11,4 +11,19 @@
  *= require_self
  *= require_tree .
  */
-body { background-color: blue; }
+body { 
+	background-color: #fff; 
+}
+
+#navigation {
+	list-style: none;
+	background-color: #ccf;
+	border-width: 900px;
+}
+
+#navigation li {
+	display: inline;
+	margin-right: 40px;
+}
+
+
