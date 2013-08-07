@@ -15,9 +15,9 @@
       <span>Welcome, <%= current_user.name %></span>
     </li>         
     <li class="dropdown">
-          <%= link_to "logout", logout_path, id: "login" %>
+          <%= link_to "Logout", logout_path, id: "login" %>
     <% else %>
-    <%= link_to "login", login_path, id: "logout" %>
+    <%= link_to "Login", login_path, id: "logout" %>
     <% end %>
     </li>         
     <li class="dropdown">
