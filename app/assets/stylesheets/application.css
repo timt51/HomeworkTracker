@@ -80,4 +80,21 @@ ul#tabMenu {
 	padding-top: 10px
 }
 
+h1 {
+	text-align: center;
+	color: white;
+}
 
+img#img1 {
+	position: relative;
+	width: 150px;
+	height: 200px;
+	margin-left: 20%;
+}
+
+img#img2 {
+	position: relative;
+	width: 150px;
+	height: 200px;
+	margin-left: 45%;
+}
