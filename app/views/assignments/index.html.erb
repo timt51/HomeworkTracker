@@ -1,30 +1,25 @@
 <% if current_user %>
 <h1>Listing assignments</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Homework</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-    <% @assignments.each do |assignment| %>
-        <% if assignment.complete? %>
-        <%= image_tag("complete.png") %>
-        <% end %>
-        <%= link_to assignment.title, assignment %>
-        <% if !assignment.complete? %>
-        <%= link_to "Complete",
-              assignment_path(assignment,
-              :assignment => { :complete => true}),
-              :method => :put %>
-        <% end %>
-  <% end %>
+<ul>
+  <% @assignments.each do |assignment| %>
+  <li>
+    <% if assignment.complete? %>
+    <%= image_tag("complete.png") %>
+    <% end %>
+    <%= link_to assignment.title, assignment %>
+    <% if !assignment.complete? %>
+    <%= link_to "Complete",
+    assignment_path(assignment,
+      :assignment => { :complete => true}),
+      :method => :put %>
+      <% end %>
+    </li>    
+    <% end %>
+  </ul>
 
-<br>
-<li>
-<%= link_to 'New Assignment', new_assignment_path %>
-</li>
-<% end %>
+  <br>
+  <li>
+    <%= link_to 'New Assignment', new_assignment_path %>
+  </li>
+  <% end %>
