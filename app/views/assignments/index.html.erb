@@ -16,8 +16,8 @@
         <% end %>
         <%= link_to assignment.title, assignment %>
         <% if !assignment.complete? %>
-        <%= link_to "Complete", 
-              assignment_path(assignment, 
+        <%= link_to "Complete",
+              assignment_path(assignment,
               :assignment => { :complete => true}),
               :method => :put %>
         <% end %>
