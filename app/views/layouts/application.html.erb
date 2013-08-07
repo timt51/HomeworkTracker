@@ -8,15 +8,19 @@
 </head>
 <body>
 
-	<div id="account">
-		<% if current_user %>
-		<span>Welcome, <%= current_user.name %></span>
-		<%= link_to "logout", logout_path, id: "login" %>
-		<% else %>
-		<%= link_to "login", login_path, id: "logout" %>
-		<% end %>
-	</div>
-
+  <div id="account">
+  <p>Homework Tracker</p>
+  <ul id= "navigation">
+  <li>
+    <% if current_user %>
+    <span>Welcome, <%= current_user.name %></span></li>
+  <li>
+    <%= link_to "logout", logout_path, id: "login" %>
+    <% else %>
+    <%= link_to "login", login_path, id: "logout" %>
+    <% end %>
+  </li>
+  
 	<%= yield %>
 
 </body>
