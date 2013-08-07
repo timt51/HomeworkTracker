@@ -3,7 +3,7 @@ class AssignmentsController < ApplicationController
   # GET /assignments
   # GET /assignments.json
   def index
-    @assignments = Assignment.all
+    @assignments = Assignment.all.sort_by { |assignment| [assignment.complete ? 0 : 1] }
   end
 
   # GET /assignments/1
@@ -24,10 +24,11 @@ class AssignmentsController < ApplicationController
   # POST /assignments.json
   def create
     @assignment = Assignment.new(assignment_params)
+    @assignment.user_id = session[:user_id]
 
     respond_to do |format|
       if @assignment.save
-        format.html { redirect_to @assignment, notice: 'Assignment was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Assignment was successfully created.' }
         format.json { render action: 'show', status: :created, location: @assignment }
       else
         format.html { render action: 'new' }
@@ -41,7 +42,7 @@ class AssignmentsController < ApplicationController
   def update
     respond_to do |format|
       if @assignment.update(assignment_params)
-        format.html { redirect_to @assignment, notice: 'Assignment was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Assignment was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -67,6 +68,6 @@ class AssignmentsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def assignment_params
-      params.require(:assignment).permit(:title, :description, :image_url, :due_date, :user_id)
+      params.require(:assignment).permit(:title, :description, :image_url, :due_date, :user_id, :complete)
     end
   end
