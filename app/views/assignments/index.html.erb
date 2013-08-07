@@ -11,25 +11,6 @@
     </tr>
   </thead>
     <% @assignments.each do |assignment| %>
-<<<<<<< HEAD
-      
-       <%= link_to assignment.title, assignment %>
-    <% end %>
-    </li>
-    <li>
-      <%= link_to 'New Assignment', new_assignment_path %>
-    </li>
-  </ul>
-  
-
-  <%= yield %>
-
-</body>
-</html>
-
-  
-
-=======
         <% if assignment.complete? %>
         <%= image_tag("complete.png") %>
         <% end %>
@@ -41,7 +22,6 @@
               :method => :put %>
         <% end %>
   <% end %>
->>>>>>> 42c68e62eb3a7de9b6b43b7c11694416cb0bfff5
 
 <br>
 <li>
