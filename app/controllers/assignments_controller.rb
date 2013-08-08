@@ -1,5 +1,8 @@
 class AssignmentsController < ApplicationController
   before_action :set_assignment, only: [:show, :edit, :update, :destroy]
+  before_action :set_schedule, only: [:show, :edit, :update, :destroy, :index]
+  before_action :all_assignments_due_dates, only: [:index]
+  before_action :make_schedule, only: [:index]
   # GET /assignments
   # GET /assignments.json
   def index
@@ -13,6 +16,7 @@ class AssignmentsController < ApplicationController
 
   # GET /assignments/new
   def new
+    @completion_times = ["10 minutes", "15 minutes", "30 minutes", "45 miuntes", "1 hour"]
     @assignment = Assignment.new
   end
 

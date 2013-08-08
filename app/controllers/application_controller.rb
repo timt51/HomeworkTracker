@@ -13,4 +13,28 @@ class ApplicationController < ActionController::Base
   	@assignment = Assignment.find_or_initialize_by_id(params[:id], user_id: session[:user_id])
   end
 
+  def set_schedule
+    @schedule = Schedule.find_or_initialize_by_id(params[:id], user_id: session[:user_id], date: Date.today)
+  end
+
+  def all_assignments_due_dates
+    @assignments_and_due_dates = {}
+    Assignment.all.each do |assignment|
+      if @assignments_and_due_dates.has_key?(assignment.due_date)
+        @assignments_and_due_dates[assignment.due_date] << assignment.title
+      else
+        @assignments_and_due_dates[assignment.due_date] = [assignment.title]
+      end
+    end
+    @assignments_and_due_dates
+  end
+
+  def make_schedule
+    Schedule.destroy_all
+    @assignments_and_due_dates.each_key do |due_date|
+      schedule = Schedule.new(:date => due_date)
+      schedule.assignments = @assignments_and_due_dates[due_date]
+      schedule.save
+    end
+  end
 end

@@ -90,3 +90,19 @@ Tuesday - enter assignments with due dates
 Monday - pick a project and setup the environment
 
 A homework tracker that allows you enter assignments, give them due dates, and check things off. Maybe it could even send you a daily email with a summary of assignments due in the next two days.
+
+schedule has everything due tomorrow on it
+if it is complete it goes to the bottom of the list
+
+for each due date make a schedule
+for each schedule add the assignments due on that day
+show the schedule for assignments due the next day
+
+associate schedules with user
+
+!!!
+schedules start at 5 by default
+schedule needs to look at estimated time to complete and sat start/end time
+after an assigment insert a break of 5 minutes
+
+insert validations
