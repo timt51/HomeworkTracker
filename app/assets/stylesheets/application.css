@@ -15,7 +15,7 @@ body {
 	background-image:url('./images/162.png');
 }
 
-#tabs li {
+#tabs li  {
 	display: inline;
 	margin-right: 20px;
 }
@@ -77,12 +77,16 @@ ul#tabPanes li#tab1,li#tab2,li#tab3,li#tab4
 }
 
 ul#tabMenu {
-	padding-top: 10px
+	padding-top: 15px
 }
 
 h1 {
 	text-align: center;
-	color: white;
+	color: black;
+	background:url('./images/wooden8.png');
+	background-size:350px 60px;
+	background-repeat:no-repeat;
+	background-position: center;
 }
 
 img#img1 {
@@ -98,3 +102,24 @@ img#img2 {
 	height: 200px;
 	margin-left: 45%;
 }
+
+ul#assignments {
+	background:url('./images/wooden8.png');
+	background-size: 500px 400px;
+	background-repeat: no-repeat;
+	background-position: left;
+	text-align: left;
+	padding-bottom: 10px;
+	position: relative;
+	margin-left: 20%;
+	margin-top: 1%
+}
+
+h2 {
+	display: block;
+}
+
+li#new_assign {
+	list-style-type: none;
+}
+
