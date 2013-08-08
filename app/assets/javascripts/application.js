@@ -70,5 +70,6 @@ regularLinks.hover(function()
     $(this).addClass('activeTab');
 }, function() {
     $(this).removeClass('activeTab');
+
 });
 
