@@ -29,13 +29,34 @@
 
   <% end %>
 
+<% start = Time.now.change({:hour => 5 , :min => 0 , :sec => 0 }) %>
+<% finish = Time.now.change({:hour => 5 , :min => 0 , :sec => 0 }) %>
+<table>
+<tr>
+  <th>Start</th>
+  <th>End</th>
+  <th>Assignment</th>
+</tr>
 <p>Your Schedule For Today</p>
-<ul>
 <% Schedule.all.each do |schedule| %>
   <% if schedule.date == Date.today + 1.day %>
     <% schedule.assignments.each do |assignment| %>
-      <li><%= assignment %></li>
+    <% assignment_time = assignment.estimated_completion_time.split[0].to_i %>
+    <% finish += assignment_time*60 %>
+    <tr>
+      <td><%= start.strftime("%l:%M") %></td>
+      <td><%= finish.strftime("%l:%M") %></td>
+      <td><%= assignment.title %></td>
+    </tr>
+    <% start = finish%>
+    <% finish += 5*60 %>
+    <tr>
+      <td><%= start.strftime("%l:%M") %></td>
+      <td><%= finish.strftime("%l:%M") %></td>
+      <td>Break!</td>
+    </tr>
+    <% start = finish%>
     <% end %>
   <% end %>
 <% end %>
-</ul>
+</table>

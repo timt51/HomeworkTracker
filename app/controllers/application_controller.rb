@@ -21,9 +21,9 @@ class ApplicationController < ActionController::Base
     @assignments_and_due_dates = {}
     Assignment.all.each do |assignment|
       if @assignments_and_due_dates.has_key?(assignment.due_date)
-        @assignments_and_due_dates[assignment.due_date] << assignment.title
+        @assignments_and_due_dates[assignment.due_date] << assignment
       else
-        @assignments_and_due_dates[assignment.due_date] = [assignment.title]
+        @assignments_and_due_dates[assignment.due_date] = [assignment]
       end
     end
     @assignments_and_due_dates
