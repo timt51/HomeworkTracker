@@ -5,7 +5,7 @@ class SchedulesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
   def index
-    @schedules = Schedule.all
+    @schedules = current_user.schedules.all
   end
   # GET /schedules/1
   # GET /schedules/1.json
@@ -65,6 +65,6 @@ class SchedulesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     # Never trust parameters from the scary internet, only allow the white list through.
     def schedule_params
-      params.require(:schedule).permit(:date, :assignments)
+      params.require(:schedule).permit(:date, :assignments, :user_id)
     end
   end

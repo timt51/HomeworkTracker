@@ -100,9 +100,11 @@ show the schedule for assignments due the next day
 
 associate schedules with user
 
-!!!
 schedules start at 5 by default
 schedule needs to look at estimated time to complete and sat start/end time
 after an assigment insert a break of 5 minutes
+
+!!!
+complete assignment => check in the schedule too
 
 insert validations
