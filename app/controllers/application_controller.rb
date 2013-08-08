@@ -19,13 +19,13 @@ class ApplicationController < ActionController::Base
 
   def all_assignments_due_dates
     @assignments_and_due_dates = {}
-    Assignment.all.each do |assignment|
+    current_user.assignments.all.each do |assignment|
       if @assignments_and_due_dates.has_key?(assignment.due_date)
         @assignments_and_due_dates[assignment.due_date] << assignment
       else
         @assignments_and_due_dates[assignment.due_date] = [assignment]
       end
-    end
+    end if current_user
     @assignments_and_due_dates
   end
 
