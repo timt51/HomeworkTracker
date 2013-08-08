@@ -1,33 +1,30 @@
+<h1>Homework Tracker</h1>
 
+<img src="http://2.bp.blogspot.com/-G8rZkDcGBS0/UWsTf5ZiWrI/AAAAAAAAAEk/LEfSwIFBz30/s1600/keep-calm-and-do-your-homework-262.png" id = "img1">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LI0vtM2C41GuyzsVH49nMj9ZguPMO3F7mqn-M3djG0LROd2Q" id = "img2">
 <% if current_user %>
 
-<p>Listing assignments</p>
-<ul>
+
+<ul id= "assignments">
+  <span><h2>Assignments <%= button_to 'New Assignment', new_assignment_path %>
+  </h2></span>
   <% @assignments.each do |assignment| %>
   <li>
     <% if assignment.complete? %>
-    <%= image_tag("complete.png") %>
-    <% end %>
     <%= link_to assignment.title, assignment %>
+    <% end %>
+    <%= image_tag("complete.png") %>
     <% if !assignment.complete? %>
     <%= link_to "Complete",
     assignment_path(assignment,
       :assignment => { :complete => true}),
       :method => :put %>
       <% end %>
-    </li>    
+    </li>
     <% end %>
+    <br>
+
   </ul>
 
-  <br>
-  <li>
-    <%= link_to 'New Assignment', new_assignment_path %>
-  </li>
 
-  <% else %>
-
-<h1>Homework Tracker</h1>
-<img src="http://2.bp.blogspot.com/-G8rZkDcGBS0/UWsTf5ZiWrI/AAAAAAAAAEk/LEfSwIFBz30/s1600/keep-calm-and-do-your-homework-262.png" id = "img1">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LI0vtM2C41GuyzsVH49nMj9ZguPMO3F7mqn-M3djG0LROd2Q" id = "img2">
-
-<% end %>
+  <% end %>
