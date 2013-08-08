@@ -6,14 +6,14 @@
 
 
 <ul id= "assignments">
-  <span><h2>Assignments <%= button_to 'New Assignment', new_assignment_path %>
+  <span><h2>Assignments <%= link_to 'New Assignment', new_assignment_path %>
   </h2></span>
   <% @assignments.each do |assignment| %>
   <li>
-    <% if assignment.complete? %>
     <%= link_to assignment.title, assignment %>
-    <% end %>
+    <% if assignment.complete? %>
     <%= image_tag("complete.png") %>
+    <% end %>
     <% if !assignment.complete? %>
     <%= link_to "Complete",
     assignment_path(assignment,
