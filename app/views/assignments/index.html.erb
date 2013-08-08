@@ -28,3 +28,14 @@
 
 
   <% end %>
+
+<p>Your Schedule For Today</p>
+<ul>
+<% Schedule.all.each do |schedule| %>
+  <% if schedule.date == Date.today + 1.day %>
+    <% schedule.assignments.each do |assignment| %>
+      <li><%= assignment %></li>
+    <% end %>
+  <% end %>
+<% end %>
+</ul>

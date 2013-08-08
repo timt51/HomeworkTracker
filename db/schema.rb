@@ -11,17 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130807145915) do
+ActiveRecord::Schema.define(version: 20130807201451) do
 
   create_table "assignments", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
-    t.date     "due_date",    limit: 255
+    t.date     "due_date",                  limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.boolean  "complete",                default: false
+    t.boolean  "complete",                              default: false
+    t.string   "estimated_completion_time",             default: "10 minutes"
+  end
+
+  create_table "schedules", force: true do |t|
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "assignments"
+    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|

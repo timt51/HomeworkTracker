@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
 		@user = User.find_or_create_by_auth(request.env["omniauth.auth"])
 		session[:user_id] = @user.id
 		load_assignment
+		set_schedule
 		redirect_to assignments_path, notice: "Logged in as #{@user.name}"
 	end
 

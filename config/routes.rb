@@ -1,4 +1,6 @@
 HomeworkTracker::Application.routes.draw do
+  resources :schedules
+
   resources :assignments
 
   root to: "assignments#index"
