@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
   def make_schedule
     Schedule.destroy_all
     @assignments_and_due_dates.each_key do |due_date|
-      schedule = Schedule.new(:date => due_date)
+      schedule = Schedule.new(:date => due_date, :user_id => session[:user_id])
       schedule.assignments = @assignments_and_due_dates[due_date]
       schedule.save
     end
