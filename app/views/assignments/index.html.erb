@@ -6,7 +6,7 @@
 
 
 <ul id= "assignments">
-  <span><h2>Assignments <%= link_to 'New Assignment', new_assignment_path %>
+  <span><h2>Assignments<button><%= link_to 'New Assignment', new_assignment_path %></button> 
   </h2></span>
   <% @assignments.each do |assignment| %>
   <li>
@@ -43,7 +43,7 @@
     <tr>
       <td><%= start.strftime("%l:%M") %></td>
       <td><%= finish.strftime("%l:%M") %></td>
-      <td><%= assignment.title %></td>
+      <td><%= assignment.title %><%= image_tag("complete.png") %></td>
     </tr>
     <% start = finish%>
     <% finish += 5*60 %>
