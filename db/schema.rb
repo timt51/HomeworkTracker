@@ -23,6 +23,10 @@ ActiveRecord::Schema.define(version: 20130809173302) do
     t.integer  "user_id"
     t.boolean  "complete",                              default: false
     t.string   "estimated_completion_time",             default: "10 minutes"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "events", force: true do |t|

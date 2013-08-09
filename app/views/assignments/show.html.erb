@@ -10,15 +10,14 @@
   <%= @assignment.description %>
 </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @assignment.image_url %>
-</p>
+
 
 <p>
   <strong>Due date:</strong>
   <%= @assignment.due_date %>
 </p>
+
+<%= image_tag @assignment.image.url %></br>
 
 <%= link_to 'Edit', edit_assignment_path(@assignment) %> |
 <%= link_to 'Destroy', @assignment, method: :delete, data: { confirm: 'Are you sure?' } %>
