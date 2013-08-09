@@ -43,7 +43,7 @@
     <tr>
       <td><%= start.strftime("%l:%M") %></td>
       <td><%= finish.strftime("%l:%M") %></td>
-      <td><%= assignment.title %></td>
+      <td><%= assignment.title %><%= image_tag("complete.png") %></td>
     </tr>
     <% start = finish%>
     <% finish += 5*60 %>
