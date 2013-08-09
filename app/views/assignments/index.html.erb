@@ -1,7 +1,8 @@
 <h1>Homework Tracker</h1>
-
+<% if !current_user%>
 <img src="http://2.bp.blogspot.com/-G8rZkDcGBS0/UWsTf5ZiWrI/AAAAAAAAAEk/LEfSwIFBz30/s1600/keep-calm-and-do-your-homework-262.png" id = "img1">
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LI0vtM2C41GuyzsVH49nMj9ZguPMO3F7mqn-M3djG0LROd2Q" id = "img2">
+<% end %>
 <% if current_user %>
 
 <ul id= "assignments">
@@ -42,7 +43,7 @@
     <tr>
       <td><%= start.strftime("%l:%M") %></td>
       <td><%= finish.strftime("%l:%M") %></td>
-      <td><%= assignment.title %><%= image_tag("complete.png") %></td>
+      <td><%= assignment.title %><%= image_tag("complete.png") if assignment.complete %></td>
     </tr>
     <% start = finish%>
     <% finish += 5*60 %>

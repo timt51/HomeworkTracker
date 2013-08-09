@@ -3,3 +3,15 @@
 <%= render 'form' %>
 
 <%= link_to 'Back', assignments_path %>
+
+
+<% start = Time.now.change({:hour => 5 , :min => 0 , :sec => 0 }).to_i %>
+<% finish = Time.now.change({:hour => 5 , :min => 30 , :sec => 0 }).to_i %>
+
+
+<div id="container" style="height:200px; width:25px; border:1px solid black;">
+  <div id="progress-bar" style= "height: <%= 50%>%;
+  		background-color:green;
+       width:25px;" >
+  </div>
+</div>
