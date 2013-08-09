@@ -26,89 +26,44 @@
     </li>
     <% end %>
 
-     </ul>
+  </ul>
 
-    <ul id="schedule">
-      <li>
-      <% start = Time.now.change({:hour => 5 , :min => 0 , :sec => 0 }) %>
-      <% finish = Time.now.change({:hour => 5 , :min => 0 , :sec => 0 }) %>
-      <table>
-        <tr>
-          <th>Start</th>
-          <th>End</th>
-          <th>Assignment</th>
-        </tr>
-        <p>Your Schedule For Today</p> 
+  <ul id="schedule">
+    <li>
+      <div id="schedule">
+        <% start = Time.now.change({:hour => 5 , :min => 0 , :sec => 0 }) %>
+        <% finish = Time.now.change({:hour => 5 , :min => 0 , :sec => 0 }) %>
+        <table>
+          <tr>
+            <th>Start</th>
+            <th>End</th>
+            <th>Assignment</th>
+          </tr>
+          <p>Your Schedule For Today</p> 
 
-        <% Schedule.all.each do |schedule| %>
+          <% Schedule.all.each do |schedule| %>
 
-    <br>
-<div id="schedule">
-<% start = Time.now.change({:hour => 5 , :min => 0 , :sec => 0 }) %>
-<% finish = Time.now.change({:hour => 5 , :min => 0 , :sec => 0 }) %>
-<table>
-<tr>
-  <th>Start</th>
-  <th>End</th>
-  <th>Assignment</th>
-</tr>
-<p>Your Schedule For Today</p> 
-
-<% Schedule.all.each do |schedule| %>
-
-  <% if schedule.date == Date.today + 1.day %>
-    <% schedule.assignments.each do |assignment| %>
-    <% assignment_time = assignment.estimated_completion_time.split[0].to_i %>
-    <% finish += assignment_time*60 %>
-    <tr>
-      <td><%= start.strftime("%l:%M") %></td>
-      <td><%= finish.strftime("%l:%M") %></td>
-      <td><%= assignment.title %><%= image_tag("complete.png") if assignment.complete %></td>
-    </tr>
-    <% start = finish%>
-    <% finish += 5*60 %>
-    <tr>
-      <td><%= start.strftime("%l:%M") %></td>
-      <td><%= finish.strftime("%l:%M") %></td>
-      <td>Break!</td>
-    </tr>
-    <% start = finish%>
-    <% end %>
-  <% end %>
-<% end %>
-</div>
-</ul>
-</table>
-
-
-        <% if schedule.date == Date.today + 1.day %>
-        <% schedule.assignments.each do |assignment| %>
-        <% assignment_time = assignment.estimated_completion_time.split[0].to_i %>
-        <% finish += assignment_time*60 %>
-        <tr>
-          <td><%= start.strftime("%l:%M") %></td>
-          <td><%= finish.strftime("%l:%M") %></td>
-          <td><%= assignment.title %><%= image_tag("complete.png") %></td>
-        </tr>
-        <% start = finish%>
-        <% finish += 5*60 %>
-        <tr>
-          <td><%= start.strftime("%l:%M") %></td>
-          <td><%= finish.strftime("%l:%M") %></td>
-          <td>Break!</td>
-        </tr>
-        <% start = finish%>
-        <% end %>
-        <% end %>
-        <% end %>
-        <li>
+          <% if schedule.date == Date.today + 1.day %>
+          <% schedule.assignments.each do |assignment| %>
+          <% assignment_time = assignment.estimated_completion_time.split[0].to_i %>
+          <% finish += assignment_time*60 %>
+          <tr>
+            <td><%= start.strftime("%l:%M") %></td>
+            <td><%= finish.strftime("%l:%M") %></td>
+            <td><%= assignment.title %><%= image_tag("complete.png") if assignment.complete %></td>
+          </tr>
+          <% start = finish%>
+          <% finish += 5*60 %>
+          <tr>
+            <td><%= start.strftime("%l:%M") %></td>
+            <td><%= finish.strftime("%l:%M") %></td>
+            <td>Break!</td>
+          </tr>
+          <% start = finish%>
+          <% end %>
+          <% end %>
+          <% end %>
+        </div>
       </ul>
-
-  </table>
-
-  <% else %>
-  <img src="http://2.bp.blogspot.com/-G8rZkDcGBS0/UWsTf5ZiWrI/AAAAAAAAAEk/LEfSwIFBz30/s1600/keep-calm-and-do-your-homework-262.png" id = "img1">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LI0vtM2C41GuyzsVH49nMj9ZguPMO3F7mqn-M3djG0LROd2Q" id = "img2">
-
-  <% end %>
-
+    </table>
+    <% end %>
