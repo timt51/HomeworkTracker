@@ -72,6 +72,6 @@ class AssignmentsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def assignment_params
-      params.require(:assignment).permit(:title, :description, :image_url, :due_date, :user_id, :complete, :estimated_completion_time)
+      params.require(:assignment).permit(:title, :description, :image_url, :due_date, :user_id, :complete, :estimated_completion_time, :image)
     end
   end
