@@ -20,10 +20,10 @@
   <%= f.text_area :description %>
 </div>
 <div class="field">
-  <% if @assignment.image.exists? %>
-      <%= image_tag @assignment.image.url %><br/>
-  <% end %>
   <%= f.label :image, "Attach a New Image" %><br />
+  <% if @assignment.image.exists? %>
+  <%= image_tag @assignment.image.url %><br/>
+  <% end %>
   <%= f.file_field :image %>
 </div>
 <div class="field">
