@@ -22,6 +22,7 @@ class AssignmentsController < ApplicationController
 
   # GET /assignments/1/edit
   def edit
+    @completion_times = ["10 minutes", "15 minutes", "30 minutes", "45 miuntes", "1 hour"]
   end
 
   # POST /assignments
