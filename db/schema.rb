@@ -29,13 +29,6 @@ ActiveRecord::Schema.define(version: 20130809173302) do
     t.datetime "image_updated_at"
   end
 
-  create_table "events", force: true do |t|
-    t.string   "name"
-    t.datetime "start_time"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "schedules", force: true do |t|
     t.date     "date"
     t.datetime "created_at"
