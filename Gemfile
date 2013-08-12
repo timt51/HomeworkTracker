@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 gem "paperclip"
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
