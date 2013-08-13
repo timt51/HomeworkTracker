@@ -1,81 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HomeworkTracker</title>
-	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-	<%= csrf_meta_tags %>
+  <title>HomeworkTracker</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
+    <ul>
+      <li>
+        <% if current_user %>
+        <span>Welcome, <%= current_user.name.split[0] %></span>
+      </li>         
 
-  <div id="tabs">
-  <ul id="tabMenu">
-      <li class="regular">
-      <% if current_user %>
-      <span>Welcome, <%= current_user.name.split[0] %></span>
-    </li>         
-    <li class="dropdown">
+      <li>
         <%= link_to "Logout", logout_path, id: "login" %>
-    </li>
-    <% else %>
-    <li class="dropdown">
-    <span>Home</span>
-    </li>
-    <li class="dropdown">
-    Login with:<%= link_to image_tag("twitter_16.png"), login_path, id: "logout" %><%= link_to image_tag("facebook_16.png"), login1_path, id: "logout" %>
-    <% end %>
-    </li>         
-    <li class="dropdown">
-      <a href="#tab2">Sign-Up</a>
-    </li>         
-    <li class="dropdown">
-      <a href="#tab3">Forgot Password</a>
-    </li>           
-   <li class="regular">
-    <a href="home.html">About</a>
-  </li>         
-  <li class="dropdown">
-    <a href="#tab4">Contact</a>
-  </li>         
-  <li class="edges"> </li>              
-</ul>
-</div>
+      </li>
+      <% else %>
+      <li>
+        <span>Home</span>
+      </li>
+      
+      <li>
+        <%= link_to "Login", login_path, id: "logout" %>
+        <% end %>
+      </li>         
 
-<div id="tabContainer">
-  <ul id="tabPanes">     
-	  <li id="tab1">
-		  <p> </p>
-			
-<div class="formcontainer">
+      <li>
+        <a href="#tab2">Sign-Up</a>
+        <ul>
+          <li><label for="username">Username</label></li>
+          <li><input type="text" alt="The username you chose when signing-up for
+            the site." id="username" name="username">
+          </li>
+          <li><label for="username">Email</label></li>
+          <li><input type="text" alt="The username you chose when signing-up for
+            the site." id="username" name="username">
+          </li>
+          <li><label for="password">Password</label>
+          </li>
+          <li>                     
+            <input type="text" alt="The password you chose when signing-up for
+            the site." id="password" name="password"></li>
+            <li><label for="password">Password Confirmation</label>
+          </li>
+          <li>                     
+            <input type="text" alt="The password you chose when signing-up for
+            the site." id="password" name="password"></li>
+            <li><button>Submit</button></li>
+          </ul>
+        </li>         
 
-<div class="text">
-  <label for="username">Username</label>                      
-	<input type="text" alt="The username you chose when signing-up for
-		the site." id="username" name="username">
-</div>                                  
+      <li>
+        <a href="#tab3">Forgot Password</a>
+        <ul>
+          <li>
+            <input type="checkbox" id="rememberme" name="rememberme"> Remember Me</div>
+          </li>
+        </ul>
+      </li>           
 
-<div class="text">
-  <label for="password">Password</label>                     
-	<input type="text" alt="The password you chose when signing-up for
-		the site." id="password" name="password">
-</div>                                  
-				
-<div class="text">                      
-  <input type="checkbox" id="rememberme" name="rememberme"> Remember Me</div>
-</div>            
+      <li>
+        <a href="home.html">About</a>
+      </li>         
 
-<center> 
-  <div id="bluebutton" class="block">
-    <button>Login</button> 
-  </div>             
-</center> 
+      <li>
+        <a href="#tab4">Contact</a>
+      </li>         
 
-<p> </p>
-	</li> 
-  </ul>
-</div>
+      <li class="edges"> </li>              
+    </ul>
+  </nav>
 
-	<%= yield %>
+        <%= yield %>
 
-</body>
-</html>
+      </body>
+      </html>
+
+
+    
