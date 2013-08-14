@@ -9,7 +9,7 @@
 <body>
   <nav>
     <ul>
-      <li>
+      <li id= "welcome">
         <% if current_user %>
         <span>Welcome, <%= current_user.name.split[0] %></span>
       </li>         
@@ -18,13 +18,27 @@
         <%= link_to "Logout", logout_path, id: "login" %>
       </li>
       <% else %>
-      <li>
+      <li id= "welcome">
         <span>Home</span>
       </li>
       
       <li>
         <%= link_to "Login", login_path, id: "logout" %>
         <% end %>
+        <ul>
+          <li><label for="username">Username</label></li>
+          <li><input type="text" alt="The username you chose when signing-up for
+            the site." id="username" name="username">
+            </li>
+          <li><label for="password">Password</label>
+          </li>
+          <li>                     
+            <input type="text" alt="The password you chose when signing-up for
+            the site." id="password" name="password"></li>
+            <li><button>Go</button></li>
+          <li><%= link_to image_tag('with_twitter.jpg'), login_path, id: "logout" %></li>
+          <li><%= link_to image_tag('with_facebook.jpg'), login1_path, id: "logout" %></li>
+        </ul>
       </li>         
 
       <li>
@@ -79,4 +93,3 @@
       </html>
 
 
-    
