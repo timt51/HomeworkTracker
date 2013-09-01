@@ -35,7 +35,7 @@
  	position: relative;
  	width: 150px;
  	height: 200px;
- 	margin-left: 45%;
+ 	margin-left: 35%;
  }
 
  h2 {
@@ -185,4 +185,13 @@ nav ul ul ul {
 
 nav ul #welcome {
 	margin-top: 20px; 
+}
+
+label {
+	color: white;
+}
+
+a:link {
+	color: black;
+	text-decoration: none;
 }

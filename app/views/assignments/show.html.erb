@@ -17,7 +17,7 @@
   <%= @assignment.due_date %>
 </p>
 
-<%= image_tag @assignment.image.url %></br>
+<%= image_tag @assignment.image.url if !@assignment.image_file_name.nil? %></br>
 
 <%= link_to 'Edit', edit_assignment_path(@assignment) %> |
 <%= link_to 'Destroy', @assignment, method: :delete, data: { confirm: 'Are you sure?' } %>
