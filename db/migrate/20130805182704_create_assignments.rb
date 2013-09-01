@@ -4,7 +4,7 @@ class CreateAssignments < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.string :image_url
-      t.string :due_date
+      t.date :due_date
 
       t.timestamps
     end

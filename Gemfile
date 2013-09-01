@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-
+gem 'protected_attributes'
 gem 'rails_12factor', group: :production
 
 
-gem "paperclip"
+gem 'paperclip'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

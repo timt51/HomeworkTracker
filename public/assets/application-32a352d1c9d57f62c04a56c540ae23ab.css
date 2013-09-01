@@ -1,0 +1,213 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+ body {
+ 	background-image:url('./images/162.png');
+ }
+
+ h1 {
+ 	text-align: center;
+ 	color: black;
+ 	background:url('./images/wooden8.png');
+ 	background-size: 350px 150px;
+ 	background-repeat: no-repeat;
+ 	background-position: center;
+ }
+
+ img#img1 {
+ 	position: relative;
+ 	width: 150px;
+ 	height: 200px;
+ 	margin-left: 20%;
+ }
+
+ img#img2 {
+ 	position: relative;
+ 	width: 150px;
+ 	height: 200px;
+ 	margin-left: 35%;
+ }
+
+ h2 {
+ 	display: block;
+ 	text-decoration: none;
+ }
+ ul#assignments {
+ 	width: 350px; 
+ 	height: 450px;
+ 	float:left; 
+ 	clear:left; 
+ 	margin-top: 50px;
+ 	margin-left: 280px;
+ 	background:url('./images/wooden84.png');
+ 	background-size: 400px 400px;
+ 	border-top-right-radius: 30px 20px;
+ 	border-top-left-radius: 30px 20px;
+ 	border-bottom-right-radius: 30px 20px;
+ 	border-bottom-left-radius: 30px 20px; 	
+ 	text-decoration: none;
+
+}
+ul #assignments a {
+	color:black;
+}
+
+button {
+ 	background:url('./images/wooden8.png');
+ 	background-size: 800px 700px;
+ 	padding: 10px 10px;
+ 	color: white;
+ 	-webkit-border-radius: 4px;
+ 	-moz-border-radius: 4px;
+ 	border-radius: 4px;
+ 	border: solid 1px; 
+ 	margin-left: 60%;
+ 	text-decoration: none
+ }
+
+ p {
+ 	font: bolder;
+ 	font-size: 20;
+ }
+
+
+ ul#schedule  {
+ 	list-style-type: none;
+ 	width: 350px; 
+ 	height: 450px;
+ 	float:right; 
+ 	clear:right; 
+ 	margin-top: 50px;
+ 	margin-right: 260px;
+ 	background:url('./images/wooden84.png');
+ 	background-size: 400px 400px;
+ 	border-top-right-radius: 30px 20px;
+ 	border-top-left-radius: 30px 20px;
+ 	border-bottom-right-radius: 30px 20px;
+ 	border-bottom-left-radius: 30px 20px; 
+ }
+
+ nav ul ul {
+ 	display: none;
+ }
+
+ nav ul li:hover > ul {
+ 	display: block;
+ }
+
+ nav {
+ 	margin-right:auto;
+	margin-left: auto;
+	text-align: center;
+ }
+
+ nav ul {
+ 	background:url('./images/wooden8.png');
+	margin-left: auto;
+ 	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+ 	padding: 0 20px;
+ 	border-radius: 5px;  
+ 	list-style: none;
+ 	position: relative;
+ 	display: inline-table;
+	font-family:Arial;
+	font-size:14px;
+	background-repeat: no-repeat;
+ 	background-position: center;
+	
+ }
+ nav ul:after {
+ 	content: ""; clear: both; display: block;
+ }
+
+ nav ul li {
+ 	float: left;
+
+ }
+
+ nav ul li ul li {
+ 	background:url('./images/wood3.jpg');
+ 	text-decoration: none;
+ }
+ nav ul li:hover {
+ 	background:url('./images/wood3.jpg');
+ 	background-size: 45px 40px;
+ }
+ 
+ nav ul li:hover a {
+ 	background:url('./images/wood3.jpg');
+ 	background-size: 45px 40px;
+ }
+
+ nav ul li a {
+ 	display: block; 
+ 	padding: 20px;
+ 	color: black; 
+ 	text-decoration: none;
+ }
+
+ nav ul ul {
+ 	background: #5f6975; 
+ 	border-radius: 0px; 
+ 	padding: 0;
+ 	position: absolute; 
+ 	top: 100%;
+ }
+ nav ul ul li {
+ 	float: none; 
+ 	/*border-top: 1px solid #6b727c;
+ 	border-bottom: 1px solid #575f6a;*/
+ 	position: relative;
+ }
+ nav ul ul li a {
+ 	padding: 15px 40px;
+ 	color: #fff;
+ }	
+ nav ul ul li a:hover {
+ 	background: #4b545f;
+ }
+
+nav ul ul ul {
+	position: absolute; 
+	left: 100%; 
+	top:0;
+}
+
+nav ul #welcome {
+	margin-top: 20px; 
+}
+
+label {
+	color: white;
+}
+
+a:link {
+	color: black;
+	text-decoration: none;
+}
+body {
+  background-color: transparent; }
+
+p {
+  color: white; }
+/*#navigation {
+  list-style: none;
+  background-color: #ccf;
+}
+
+#navigation li {
+  display: inline;
+  margin-right: 40px;
+}
+*/
